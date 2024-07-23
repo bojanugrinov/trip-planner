@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	scroll-behavior: smooth;
+	overflow-y: scroll;
+}
+
+body {
+	background-image: url('https://i.pinimg.com/originals/73/70/00/737000df4b8e04719d38b1b4537ebad2.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+#root {
+	height: auto;
+	background: rgba(255, 255, 255, 0.9);
+}
+
+input::-webkit-search-cancel-button {
+	visibility: hidden;
+}
+
+.trash-icon {
+	color: gray;
+}
+
+.trash-icon:hover {
+	color: red;
+}
+
+.user-card {
+	color: #3d3839;
+}
+
+header {
+	background: white;
+}
