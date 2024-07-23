@@ -31,7 +31,7 @@ export default function App() {
 
 			<ScrollToTop
 				smooth
-				className='rounded-[50%] bg-white hover:bg-gray-200 w-14 h-14 fixed bottom-5 right-5 filter drop-shadow-2xl flex justify-center items-center'
+				className='!rounded-[50%] !bg-white !hover:bg-gray-200 !w-14 !h-14 !fixed !bottom-5 !right-5 !filter !drop-shadow-2xl !flex !justify-center !items-center'
 			/>
 
 			<Footer />
