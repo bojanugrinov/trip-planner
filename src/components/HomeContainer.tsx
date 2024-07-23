@@ -1,42 +1,42 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CountryCard from './CountryCard';
-import SearchBar from './SearchBar';
+// import SearchBar from './SearchBar';
 import { CountryContext } from '../context/country.context';
-import axios from 'axios';
-import { useDebouncedCallback } from 'use-debounce';
+// import axios from 'axios';
+// import { useDebouncedCallback } from 'use-debounce';
 import Loader from './Loader';
 import { Country } from '../common/types/country.interface';
 
 export default function HomeContainer() {
-	const { countries, isLoading, setLoader } = useContext(CountryContext);
+	const { countries, isLoading } = useContext(CountryContext);
 	const [filteredCountries, setFilteredCountries] = useState(countries);
 
-	const searchInput = useRef<HTMLInputElement>(null);
+	// const searchInput = useRef<HTMLInputElement>(null);
 
 	useEffect(() => {
 		setFilteredCountries(countries);
 	}, [countries]);
 
-	async function getCountriesByName(countryName: string) {
-		setLoader(true);
-		try {
-			const response = await axios(`https://restcountries.com/v3.1/name/${countryName}`);
-			return response.data;
-		} catch (error) {
-			console.log(error);
-		} finally {
-			setLoader(false);
-		}
-	}
+	// async function getCountriesByName(countryName: string) {
+	// 	setLoader(true);
+	// 	try {
+	// 		const response = await axios(`https://restcountries.com/v3.1/name/${countryName}`);
+	// 		return response.data;
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	} finally {
+	// 		setLoader(false);
+	// 	}
+	// }
 
-	const handleSearch = useDebouncedCallback(async () => {
-		if (searchInput.current!.value === '' || undefined) {
-			setFilteredCountries(countries);
-			return;
-		}
+	// const handleSearch = useDebouncedCallback(async () => {
+	// 	if (searchInput.current!.value === '' || undefined) {
+	// 		setFilteredCountries(countries);
+	// 		return;
+	// 	}
 
-		setFilteredCountries(await getCountriesByName(searchInput.current!.value));
-	}, 300);
+	// 	setFilteredCountries(await getCountriesByName(searchInput.current!.value));
+	// }, 300);
 
 	return (
 		<main>
