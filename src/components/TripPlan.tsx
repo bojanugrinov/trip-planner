@@ -13,7 +13,7 @@ export default function TripPlan() {
 	}
 
 	return (
-		<div className='flex flex-col mb-auto mx-12'>
+		<div className='flex flex-col mx-12'>
 			<h1 className='text-2xl font-semibold text-primary text-center ml-6 grow mb-4 md:mb-0'>
 				Trip Plan
 			</h1>

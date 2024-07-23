@@ -5,6 +5,8 @@ import ScrollToTop from 'react-scroll-to-top';
 import HomeContainer from './components/HomeContainer';
 import TripPlan from './components/TripPlan';
 import Footer from './components/Footer';
+import PlannedTrips from './components/PlannedTrips';
+import NotFound from './components/NotFound';
 
 export default function App() {
 	return (
@@ -15,6 +17,9 @@ export default function App() {
 				<Routes>
 					<Route path='/' element={<HomeContainer />} />
 					<Route path='/trip-plan' element={<TripPlan />} />
+					<Route path='/planned-trips' element={<PlannedTrips />} />
+
+					<Route path='*' element={<NotFound />} />
 				</Routes>
 			</div>
 
@@ -24,8 +29,6 @@ export default function App() {
 					<Route path='/region/:region' element={<RegionContainer />} />
 					<Route path='/trip-plan' element={<TripPlan />} />
 					<Route path='/trip-information-form' element={<TripInformationForm />} />
-					<Route path='/planned-trips' element={<PlannedTrips />} />
-					<Route path='*' element={<NotFound />} />
 				</Routes>
 			</div> */}
 

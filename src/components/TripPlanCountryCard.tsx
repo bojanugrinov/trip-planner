@@ -32,20 +32,20 @@ export default function TripPlanCountryCard({ tripCountry }: TripPlanCountryCard
 				<div className='flex justify-center items-center gap-x-4'>
 					<button
 						disabled={days === 1}
-						className='flex justify-center items-center rounded-[50%] w-8 h-8 text-2xl bg-primary text-white hover:bg-blue-900 hover:text-white transition ease-in-out disabled:bg-gray-300'
+						className='flex justify-center items-center rounded-[50%] w-8 h-8 text-2xl bg-primary text-white hover:bg-secondary hover:text-primary transition ease-in-out disabled:bg-gray-300'
 						onClick={() => setDays(days - 1)}
 					>
-						<span className=''>-</span>
+						<span className='mb-1'>-</span>
 					</button>
 
 					<p className='font-semibold text-primary text-lg w-6 text-center'>{days}</p>
 
 					<button
 						disabled={days === 30}
-						className='flex justify-center items-center rounded-[50%] w-8 h-8 text-2xl bg-primary text-white hover:bg-blue-900 hover:text-white transition ease-in-out disabled:bg-gray-300'
+						className='flex justify-center items-center rounded-[50%] w-8 h-8 text-2xl bg-primary text-white hover:bg-secondary hover:text-primary transition ease-in-out disabled:bg-gray-300'
 						onClick={() => setDays(days + 1)}
 					>
-						<span className=''>+</span>
+						<span className='mb-1'>+</span>
 					</button>
 				</div>
 			</div>
