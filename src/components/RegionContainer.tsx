@@ -30,10 +30,10 @@ export default function RegionContainer() {
 	return (
 		<main className='lg:mx-12 mb-auto'>
 			<p className='text-left text-xl text-primary mb-4 md:ml-10 ml-4 font-semibold'>
-				➼ 10 Most popular destinations in {region}
+				➼ Most popular destinations in {region}
 			</p>
 
-			<section className='flex flex-row flex-wrap gap-8 justify-center'>
+			<section className='flex flex-wrap justify-center gap-y-10 gap-x-10 mx-12'>
 				{regionCountries.map((country) => (
 					<CountryCard country={country} key={country.name.common} />
 				))}

@@ -99,8 +99,12 @@ export default function Header() {
 								showRegions ? 'flex' : 'hidden'
 							}`}
 						>
-							{regions.map((region) => (
-								<button className='hover:bg-secondary hover:text-primary cursor-pointer w-full text-start pl-6 py-2 border-t-2 border-secondary'>
+							{regions.map((region, index) => (
+								<button
+									key={index}
+									className='hover:bg-secondary hover:text-primary cursor-pointer w-full text-start pl-6 py-2 border-t-2 border-secondary'
+									onClick={() => handleNavigation(`/region/${region}`)}
+								>
 									{region}
 								</button>
 							))}
@@ -152,25 +156,19 @@ export default function Header() {
 				</button>
 
 				<div
-					className={`flex w-[full] bg-primary flex-col items-center rounded-b-md ${
+					className={`flex w-full bg-primary flex-col items-center rounded-b-md ${
 						showHamburgerMenuRegions ? 'flex' : 'hidden'
 					}`}
 				>
-					<button className='hover:bg-secondary hover:text-primary cursor-pointer w-full text-center py-4'>
-						Asia
-					</button>
-					<button className='hover:bg-secondary hover:text-primary cursor-pointer w-full text-center py-4'>
-						Africa
-					</button>
-					<button className='hover:bg-secondary hover:text-primary cursor-pointer w-full text-center py-4'>
-						Europe
-					</button>
-					<button className='hover:bg-secondary hover:text-primary cursor-pointer w-full text-center py-4'>
-						Americas
-					</button>
-					<button className='hover:bg-secondary hover:text-primary cursor-pointer w-full text-center py-4'>
-						Oceania
-					</button>
+					{regions.map((region, index) => (
+						<button
+							key={index}
+							className='hover:bg-secondary hover:text-primary cursor-pointer w-full text-center py-4'
+							onClick={() => handleNavigation(`/region/${region}`)}
+						>
+							{region}
+						</button>
+					))}
 				</div>
 			</div>
 		</header>

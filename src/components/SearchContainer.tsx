@@ -45,7 +45,7 @@ export default function SearchContainer() {
 			{isLoading ? (
 				<Loader />
 			) : (
-				<section className='flex flex-wrap justify-center gap-y-10 gap-x-6 mx-12'>
+				<section className='flex flex-wrap justify-center gap-y-10 gap-x-10 mx-12'>
 					{filteredCountries ? (
 						filteredCountries.map((country: Country) => (
 							<CountryCard country={country} key={country.name.common} />
