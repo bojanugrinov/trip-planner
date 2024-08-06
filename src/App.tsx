@@ -9,6 +9,7 @@ import PlannedTrips from './components/PlannedTrips';
 import NotFound from './components/NotFound';
 import SearchContainer from './components/SearchContainer';
 import RegionContainer from './components/RegionContainer';
+import TripInformationForm from './components/TripInformationForm';
 
 export default function App() {
 	return (
@@ -20,18 +21,13 @@ export default function App() {
 					<Route path='/' element={<HomeContainer />} />
 					<Route path='/region/:region' element={<RegionContainer />} />
 					<Route path='/trip-plan' element={<TripPlan />} />
+					<Route path='/trip-information-form' element={<TripInformationForm />} />
 					<Route path='/planned-trips' element={<PlannedTrips />} />
 					<Route path='/search' element={<SearchContainer />} />
 
 					<Route path='*' element={<NotFound />} />
 				</Routes>
 			</div>
-
-			{/* <div className='mb-auto'>
-				<Routes>
-					<Route path='/trip-information-form' element={<TripInformationForm />} />
-				</Routes>
-			</div> */}
 
 			<ScrollToTop
 				smooth

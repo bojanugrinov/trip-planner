@@ -12,6 +12,10 @@ export default function RegionContainer() {
 	const [regionCountries, setRegionCountries] = useState<Country[]>([]);
 
 	useEffect(() => {
+		document.title = `${region} | Trip Planner`;
+	}, [region]);
+
+	useEffect(() => {
 		if (region && region in Region) {
 			axios
 				.get(`https://restcountries.com/v3.1/region/${region}`)

@@ -135,7 +135,7 @@ export default function PassengerForm() {
 			<div className='flex gap-x-6'>
 				<button
 					type='submit'
-					className='py-2 px-4 bg-primary hover:bg-blue-900 text-white rounded-lg mx-auto'
+					className='py-2 px-4 bg-primary hover:bg-secondary hover:text-primary text-white rounded-lg mx-auto'
 				>
 					Plan Trip
 				</button>

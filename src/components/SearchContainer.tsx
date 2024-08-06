@@ -14,6 +14,10 @@ export default function SearchContainer() {
 	const searchInput = useRef<HTMLInputElement>(null);
 
 	useEffect(() => {
+		document.title = 'Search | Trip Planner';
+	}, []);
+
+	useEffect(() => {
 		setFilteredCountries(countries);
 	}, [countries]);
 

@@ -19,6 +19,7 @@ type CountryContextType = {
 	handleClearTripCountries: () => void;
 	handleAddToPlannedTrips: (plannedTrip: PlannedTrip) => void;
 	plannedTrips: PlannedTrip[];
+	handleClearPlannedTrips: () => void;
 };
 
 const defaultValues: CountryContextType = {
@@ -32,6 +33,7 @@ const defaultValues: CountryContextType = {
 	handleClearTripCountries: () => {},
 	handleAddToPlannedTrips: () => {},
 	plannedTrips: [],
+	handleClearPlannedTrips: () => {},
 };
 
 export const CountryContext = createContext<CountryContextType>(defaultValues);
@@ -112,6 +114,10 @@ export default function CountryProvider({ children }: CountryContextProviderType
 		localStorage.setItem('plannedTrips', JSON.stringify(plannedTrips));
 	}, [plannedTrips]);
 
+	const handleClearPlannedTrips = () => {
+		setPlannedTrips([]);
+	};
+
 	return (
 		<CountryContext.Provider
 			value={{
@@ -125,6 +131,7 @@ export default function CountryProvider({ children }: CountryContextProviderType
 				handleClearTripCountries,
 				handleAddToPlannedTrips,
 				plannedTrips,
+				handleClearPlannedTrips,
 			}}
 		>
 			{children}

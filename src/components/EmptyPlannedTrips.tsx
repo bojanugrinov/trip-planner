@@ -8,10 +8,10 @@ export default function EmptyPlannedTrips() {
 			</h1>
 
 			<div className='text-center mt-12 mx-10'>
-				<h2 className='text-secondary text-xl font-semibold'>
+				<h2 className='text-primary text-xl font-semibold'>
 					You currently don't have any planned trips.
 				</h2>
-				<h2 className='text-secondary text-xl mt-4 font-semibold'>
+				<h2 className='text-primary text-xl mt-4 font-semibold'>
 					<span className='text-blue-700 underline cursor-pointer hover:text-blue-400'>
 						<Link to='/'>Click here</Link>
 					</span>{' '}

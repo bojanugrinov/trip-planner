@@ -1,10 +1,14 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import CountryCard from './CountryCard';
 import { CountryContext } from '../context/country.context';
 import { Country } from '../common/types/country.interface';
 
 export default function HomeContainer() {
 	const { countries } = useContext(CountryContext);
+
+	useEffect(() => {
+		document.title = 'Trip Planner';
+	}, []);
 
 	return (
 		<main>

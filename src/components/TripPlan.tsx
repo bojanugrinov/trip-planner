@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { CountryContext } from '../context/country.context';
 import TripPlanCountryCard from './TripPlanCountryCard';
 import { useNavigate } from 'react-router-dom';
@@ -7,6 +7,10 @@ import EmptyTripPlan from './EmptyTripPlan';
 export default function TripPlan() {
 	const { tripCountries, handleClearTripCountries } = useContext(CountryContext);
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		document.title = 'Trip Plan | Trip Planner';
+	}, []);
 
 	if (!tripCountries.length) {
 		return <EmptyTripPlan />;
@@ -36,7 +40,7 @@ export default function TripPlan() {
 				</button>
 
 				<button
-					className='py-2 px-4 bg-primary text-white rounded-xl shadow-xl hover:bg-blue-900 transition ease-in-out'
+					className='py-2 px-4 bg-primary text-white rounded-xl shadow-xl hover:bg-secondary hover:text-primary transition ease-in-out'
 					onClick={() => navigate('/trip-information-form')}
 				>
 					Continue &nbsp; &#8658;
