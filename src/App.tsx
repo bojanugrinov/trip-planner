@@ -7,6 +7,7 @@ import TripPlan from './components/TripPlan';
 import Footer from './components/Footer';
 import PlannedTrips from './components/PlannedTrips';
 import NotFound from './components/NotFound';
+import SearchContainer from './components/SearchContainer';
 
 export default function App() {
 	return (
@@ -18,6 +19,7 @@ export default function App() {
 					<Route path='/' element={<HomeContainer />} />
 					<Route path='/trip-plan' element={<TripPlan />} />
 					<Route path='/planned-trips' element={<PlannedTrips />} />
+					<Route path='/search' element={<SearchContainer />} />
 
 					<Route path='*' element={<NotFound />} />
 				</Routes>
@@ -25,9 +27,7 @@ export default function App() {
 
 			{/* <div className='mb-auto'>
 				<Routes>
-					<Route path='/' element={<MainContainer />} />
 					<Route path='/region/:region' element={<RegionContainer />} />
-					<Route path='/trip-plan' element={<TripPlan />} />
 					<Route path='/trip-information-form' element={<TripInformationForm />} />
 				</Routes>
 			</div> */}

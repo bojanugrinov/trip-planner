@@ -1,13 +1,13 @@
 import { useContext, useEffect, useRef, useState } from 'react';
-import CountryCard from './CountryCard';
-import SearchBar from './SearchBar';
 import { CountryContext } from '../context/country.context';
+import { Country } from '../common/types/country.interface';
+import CountryCard from './CountryCard';
 import axios from 'axios';
 import { useDebouncedCallback } from 'use-debounce';
+import SearchBar from './SearchBar';
 import Loader from './Loader';
-import { Country } from '../common/types/country.interface';
 
-export default function MainContainer() {
+export default function SearchContainer() {
 	const { countries, isLoading, setLoader } = useContext(CountryContext);
 	const [filteredCountries, setFilteredCountries] = useState(countries);
 
@@ -39,7 +39,7 @@ export default function MainContainer() {
 	}, 300);
 
 	return (
-		<main className='mb-auto'>
+		<div>
 			<SearchBar searchInput={searchInput} handleSearch={handleSearch} />
 
 			{isLoading ? (
@@ -55,6 +55,6 @@ export default function MainContainer() {
 					)}
 				</section>
 			)}
-		</main>
+		</div>
 	);
 }

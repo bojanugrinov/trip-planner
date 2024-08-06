@@ -3,6 +3,7 @@ import {
 	faChevronDown,
 	faChevronUp,
 	faLocationDot,
+	faMagnifyingGlass,
 	faPlaneUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
@@ -108,7 +109,7 @@ export default function Header() {
 				</div>
 			</div>
 
-			<div className='flex flex-row gap-4 text-white'>
+			<div className='flex flex-row gap-8 text-white'>
 				<button
 					className='text-lg flex items-center gap-3 hover:text-[#76ABAE]'
 					onClick={() => handleNavigation('/trip-plan')}
@@ -123,6 +124,14 @@ export default function Header() {
 				>
 					<FontAwesomeIcon icon={faLocationDot} className='size-6' />{' '}
 					<span className='hidden lg:block'>Planned Trips</span>
+				</button>
+
+				<button
+					className='text-lg flex items-center gap-3 hover:text-[#76ABAE]'
+					onClick={() => handleNavigation('/search')}
+				>
+					<FontAwesomeIcon icon={faMagnifyingGlass} className='size-6' />{' '}
+					<span className='hidden lg:block'>Search</span>
 				</button>
 			</div>
 
