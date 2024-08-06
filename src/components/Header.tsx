@@ -29,7 +29,7 @@ export default function Header() {
 		<header className='bg-[#222831] py-4  px-6 lg:px-10 flex justify-between items-center shadow-2xl sticky top-0 z-50 mb-12'>
 			{/* HAMBURGER MENU */}
 			<div
-				className='flex lg:hidden flex-col items-center justify-center gap-[8px] z-40 cursor-pointer p-3 min-h-12 max-h-12'
+				className='flex lg:hidden flex-col items-center justify-center gap-[8px] z-40 cursor-pointer min-h-12 max-h-12'
 				onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
 			>
 				<span
@@ -113,9 +113,9 @@ export default function Header() {
 				</div>
 			</div>
 
-			<div className='flex flex-row gap-8 text-white'>
+			<div className='flex flex-row lg:gap-8 text-white'>
 				<button
-					className='text-lg flex items-center gap-3 hover:text-[#76ABAE]'
+					className='text-lg hidden lg:flex items-center gap-3 hover:text-[#76ABAE]'
 					onClick={() => handleNavigation('/trip-plan')}
 				>
 					<FontAwesomeIcon icon={faPlaneUp} className='size-6' />{' '}
@@ -123,7 +123,7 @@ export default function Header() {
 				</button>
 
 				<button
-					className='text-lg flex items-center gap-3 hover:text-[#76ABAE]'
+					className='text-lg hidden lg:flex items-center gap-3 hover:text-[#76ABAE]'
 					onClick={() => handleNavigation('/planned-trips')}
 				>
 					<FontAwesomeIcon icon={faLocationDot} className='size-6' />{' '}
@@ -144,12 +144,41 @@ export default function Header() {
 					showHamburgerMenu ? 'flex' : 'hidden'
 				} lg:hidden fixed flex-col justify-start items-center top-16 left-0 w-[80%] shadow-2xl h-screen py-4 bg-primary text-white`}
 			>
-				<button className='hover:bg-[#76ABAE] w-full py-4'>Home</button>
-				<hr className='w-full border-secondary' />
-				<button className='hover:bg-[#76ABAE] w-full py-4'>About</button>
-				<hr className='w-full border-secondary' />
 				<button
-					className='hover:bg-[#76ABAE] flex justify-center items-center gap-2 w-full py-4'
+					className='hover:bg-[#76ABAE] w-full py-4 text-lg'
+					onClick={() => handleNavigation('/')}
+				>
+					Home
+				</button>
+
+				<hr className='w-full border-secondary' />
+
+				<button className='hover:bg-[#76ABAE] w-full py-4 text-lg'>About</button>
+
+				<hr className='w-full border-secondary' />
+
+				<button
+					className='text-lg flex items-center gap-3 hover:text-[#76ABAE] py-4 w-full justify-center'
+					onClick={() => handleNavigation('/trip-plan')}
+				>
+					{/* <FontAwesomeIcon icon={faPlaneUp} className='size-6' />{' '} */}
+					<span className='block'>Trip Plan</span>
+				</button>
+
+				<hr className='w-full border-secondary' />
+
+				<button
+					className='text-lg flex items-center gap-3 hover:text-[#76ABAE] py-4 w-full justify-center'
+					onClick={() => handleNavigation('/planned-trips')}
+				>
+					{/* <FontAwesomeIcon icon={faLocationDot} className='size-6' />{' '} */}
+					<span className='block'>Planned Trips</span>
+				</button>
+
+				<hr className='w-full border-secondary' />
+
+				<button
+					className='hover:bg-[#76ABAE] flex justify-center items-center gap-2 w-full py-4 text-lg'
 					onClick={() => setShowHamburgerMenuRegions(!showRegions)}
 				>
 					Region <FontAwesomeIcon icon={faChevronDown} />

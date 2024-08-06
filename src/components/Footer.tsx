@@ -8,7 +8,7 @@ export default function Footer() {
 					<h1 className='text-lg font-semibold'>Trip Planner 2024</h1>
 				</div>
 
-				<ul className='flex flex-col lg:flex-row justify-center items-center gap-x-4 gap-y-4 lg:gap-y-0 text-md font-semibold'>
+				<ul className='hidden lg:flex justify-center items-center gap-x-4 gap-y-4 lg:gap-y-0 text-md font-semibold'>
 					<li onClick={() => window.scroll(0, 0)}>
 						<Link to='/'>Home</Link>
 					</li>
